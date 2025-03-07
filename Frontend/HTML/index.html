@@ -9,29 +9,36 @@
 </head>
 <body>
     <header>
-        <h1>La Surconsommation de la Pêche</h1>
+        <h1>Bienvenue sur notre site de sensibilisation à la surconsommation de la pêche</h1>
+        <nav>
+            <ul>
+                <li><a href="index">Accueil</a></li>
+                <li><a href="Problematique">Problématique</a></li>
+                <li><a href="documentation">Documentation</a></li>
+                <li><a href="question">Questions</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
         <section id="intro">
-            <p>Chaque année, des milliards de poissons sont capturés, menaçant l'équilibre de nos océans.</p>
+            <h2>Pourquoi la surpêche est un problème majeur ?</h2>
+            <p>Chaque année, des milliards de poissons sont capturés, menaçant l'équilibre de nos océans et la biodiversité marine.</p>
             <button id="learnMore">En savoir plus</button>
         </section>
-        <section id="quiz">
-            <h2>Testez vos connaissances !</h2>
-            <div id="question-container"></div>
-        </section>
-        <section id="video">
-            <h2>Regardez cette vidéo explicative</h2>
-            <video controls>
-                <source src="/videos/ocean.mp4" type="video/mp4">
-                Votre navigateur ne supporte pas la lecture de vidéos.
-            </video>
-        </section>
-        <section id="stats">
-            <h2>Impact sur la biodiversité</h2>
-            <canvas id="fishingChart"></canvas>
+        <section id="interactive">
+            <h2>Découvrez nos contenus interactifs</h2>
+            <p>Explorez nos différentes sections pour mieux comprendre l’impact de la surpêche.</p>
+            <div class="card-container">
+                <a href="Problematique.html" class="card">Problématique</a>
+                <a href="documentation.html" class="card">Documentation</a>
+                <a href="question.html" class="card">Questions</a>
+            </div>
         </section>
     </main>
+    <footer>
+        <p>&copy; 2025 Sensibilisation à la Surpêche</p>
+    </footer>
     <div id="floating-icons"></div>
 </body>
 </html>
+
