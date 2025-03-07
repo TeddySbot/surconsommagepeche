@@ -1,28 +1,4 @@
-document.getElementById("learnMore").addEventListener("click", function() {
-    alert("La surpêche réduit drastiquement les populations de poissons !");
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const learnMoreBtn = document.getElementById("learnMore");
-    learnMoreBtn.addEventListener("click", function () {
-        alert("La surpêche menace 90% des stocks de poissons dans le monde.");
-    });
-
-    const quizContainer = document.getElementById("question-container");
-    quizContainer.innerHTML = "<p>Quelle est la conséquence principale de la surpêche ?</p>" +
-        "<button onclick=\"checkAnswer('a')\">A) Réduction des stocks</button>" +
-        "<button onclick=\"checkAnswer('b')\">B) Augmentation des poissons</button>";
-});
-
-function checkAnswer(answer) {
-    if (answer === 'a') {
-        alert("Correct ! La surpêche réduit les populations de poissons.");
-    } else {
-        alert("Incorrect. Essayez encore !");
-    }
-}
-
-// Génération d'éléments flottants
+// Animation des émojis poissons
 function createFloatingIcons() {
     const floatingContainer = document.getElementById("floating-icons");
     for (let i = 0; i < 20; i++) {
@@ -34,4 +10,13 @@ function createFloatingIcons() {
         floatingContainer.appendChild(fish);
     }
 }
-createFloatingIcons();
+
+// Bouton "En savoir plus"
+document.getElementById("learnMore").addEventListener("click", function () {
+    alert("La surpêche menace 90% des stocks de poissons dans le monde. Agissons maintenant !");
+});
+
+// Initialisation
+document.addEventListener("DOMContentLoaded", function () {
+    createFloatingIcons();
+});

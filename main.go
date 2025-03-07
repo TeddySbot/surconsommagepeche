@@ -12,7 +12,6 @@ func main() {
 	http.HandleFunc("/", IndexHandler)
 	http.HandleFunc("/documentation", IndexDocument)
 	http.HandleFunc("/question", IndexQuestion)
-	http.HandleFunc("/problematique", Indexproblematique)
 
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("Frontend"))))
 	http.Handle("/js/", http.StripPrefix("/js/", http.FileServer(http.Dir("Frontend/JS"))))
@@ -37,16 +36,6 @@ func IndexDocument(w http.ResponseWriter, r *http.Request) {
 
 func IndexQuestion(w http.ResponseWriter, r *http.Request) {
 	tmpl, err := template.ParseFiles("Frontend/HTML/question.html")
-	if err != nil {
-		http.Error(w, "Erreur lors du rendu de la page", http.StatusInternalServerError)
-		return
-	}
-	tmpl.Execute(w, nil)
-
-}
-
-func Indexproblematique(w http.ResponseWriter, r *http.Request) {
-	tmpl, err := template.ParseFiles("Frontend/HTML/problematique.html")
 	if err != nil {
 		http.Error(w, "Erreur lors du rendu de la page", http.StatusInternalServerError)
 		return

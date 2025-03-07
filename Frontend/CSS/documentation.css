@@ -1,55 +1,290 @@
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #bbdefb;
+    background-color: #f4f4f4;
     color: #333;
-    text-align: center;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
+/* Header */
 header {
-    background-color: #2196f3; /* Couleur de fond */
-    color: white; /* Couleur du texte */
-    padding: 20px; /* Espacement interne */
-    display: flex; /* Utilisation de flexbox pour l'alignement */
-    justify-content: space-between; /* Espacement entre logo et nav */
-    align-items: center; /* Alignement vertical */
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.logo h1 {
-    margin: 0; /* Suppression des marges */
-    font-size: 1.8em; /* Taille de la police */
+header .logo h1 {
+    margin: 0;
+    font-size: 1.8em;
 }
 
-nav ul {
-    list-style-type: none; /* Suppression des puces */
-    padding: 0; /* Suppression du padding */
-    margin: 0; /* Suppression des marges */
-    display: flex; /* Utilisation de flexbox pour l'alignement */
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
 }
 
-nav ul li {
-    margin: 0 15px; /* Espacement entre les éléments de la liste */
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-nav ul li a {
-    color: white; /* Couleur des liens */
-    text-decoration: none; /* Suppression du soulignement */
-    font-weight: bold; /* Texte en gras */
-    transition: color 0.3s; /* Transition pour l'effet hover */
+header nav ul li a:hover {
+    color: #ffeb3b;
 }
 
-nav ul li a:hover {
-    color: #ffeb3b; /* Couleur au survol */
+/* Contenu Principal */
+main {
+    flex-grow: 1;
+    padding: 20px;
 }
 
+.intro {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.intro h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    font-size: 1.2em;
+}
+
+/* Petit menu */
+.small-menu {
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.small-menu p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.small-menu button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.small-menu button:hover {
+    background-color: #024c9a;
+}
+
+/* Grand menu (caché par défaut) */
+.large-menu {
+    display: none; /* Caché par défaut */
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.large-menu .info-card {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.large-menu .info-card span {
+    font-size: 1.5em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.large-menu .info-card p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Footer */
 footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+}
+
+/* Styles pour le bouton "Revenir au menu principal" */
+#back-to-small-menu {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
     margin-top: 20px;
 }
-.download-link {
-    background-color: #1976d2;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
+
+#back-to-small-menu:hover {
+    background-color: #0551a2;
 }
-.download-link:hover {
-    background-color: #0d47a1;
+
+/* Styles pour l'image dans le petit menu */
+.menu-image {
+    max-width: 100%; /* L'image ne dépasse pas la largeur de son conteneur */
+    height: auto; /* Maintient le ratio de l'image */
+    border-radius: 10px; /* Coins arrondis */
+    margin: 20px 0; /* Espacement autour de l'image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    display: block; /* Assure que l'image est centrée */
+    margin-left: auto;
+    margin-right: auto;
+    width:300px;
+    height:400p;
+}
+
+/* Styles pour la section spécifique avec 2 cartes */
+#large-menu-1.horizontal {
+    display: flex;
+    gap: 20px; /* Espacement entre les cartes */
+}
+
+#large-menu-1.horizontal .info-card {
+    flex: 1 1 calc(50% - 20px); /* Chaque carte prend 50% de l'espace, moins l'espacement */
+    max-width: calc(50% - 20px); /* Limite la largeur à 50% */
+    box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur */
+}
+
+/* Styles pour les écrans plus petits (responsive) */
+@media (max-width: 768px) {
+    #large-menu-1.horizontal .info-card {
+        flex: 1 1 100%; /* 1 carte par ligne sur les petits écrans */
+        max-width: 100%;
+    }
+}
+
+
+@media (max-width: 480px) {
+    #large-menu-1 .info-card {
+        flex: 1 1 100%; /* 1 carte par ligne sur les petits écrans */
+        max-width: 100%;
+    }
+}
+
+/* Styles pour le grand menu horizontal */
+.large-menu.horizontal {
+    display: flex; /* Active Flexbox */
+    flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
+    gap: 20px; /* Espacement entre les cartes */
+    justify-content: space-between; /* Répartit l'espace entre les cartes */
+}
+
+.large-menu.horizontal .info-card {
+    flex: 1 1 calc(25% - 20px); /* Chaque carte prend 25% de l'espace, moins l'espacement */
+    max-width: calc(25% - 20px); /* Limite la largeur à 25% */
+    box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur */
+}
+
+/* Styles pour les écrans plus petits (responsive) */
+@media (max-width: 768px) {
+    .large-menu.horizontal .info-card {
+        flex: 1 1 calc(50% - 20px); /* 2 cartes par ligne sur les écrans moyens */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .large-menu.horizontal .info-card {
+        flex: 1 1 100%; /* 1 carte par ligne sur les petits écrans */
+        max-width: 100%;
+    }
+}
+
+/* Styles pour les autres grands menus (disposition verticale) */
+.large-menu:not(.horizontal) .info-card {
+    margin-bottom: 20px; /* Espacement entre les cartes */
+}
+
+/* Styles pour le conteneur de la carte */
+.info-card {
+    display: flex; /* Active Flexbox */
+    align-items: flex-start; /* Aligne les éléments en haut */
+    gap: 20px; /* Espacement entre l'image et le texte */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Styles pour l'image */
+.info-card-image {
+    width: 150px; /* Largeur fixe pour l'image */
+    height: auto; /* Maintient le ratio de l'image */
+    border-radius: 10px; /* Coins arrondis */
+    object-fit: cover; /* Assure que l'image couvre bien l'espace */
+}
+
+/* Styles pour l'image */
+.info-card-image2 {
+    width: 650px; /* Largeur fixe pour l'image */
+    height: auto; /* Maintient le ratio de l'image */
+    border-radius: 10px; /* Coins arrondis */
+    object-fit: cover; /* Assure que l'image couvre bien l'espace */
+}
+
+/* Styles pour le contenu texte */
+.info-card-content {
+    flex: 1; /* Prend tout l'espace disponible */
+}
+
+.info-card-content span {
+    font-weight: bold; /* Texte en gras pour le titre */
+    display: block; /* Assure que le titre est sur une ligne séparée */
+    margin-bottom: 10px; /* Espacement après le titre */
+}
+
+.info-card-content p {
+    margin: 0 0 10px 0; /* Espacement entre les paragraphes */
+    line-height: 1.6; /* Améliore la lisibilité */
+}
+
+/* Styles pour les écrans plus petits (responsive) */
+@media (max-width: 768px) {
+    .info-card {
+        flex-direction: column; /* Empile l'image et le texte sur les petits écrans */
+        align-items: center; /* Centre les éléments */
+    }
+
+    .info-card-image {
+        width: 100%; /* L'image prend toute la largeur */
+        max-width: 300px; /* Limite la largeur maximale */
+    }
 }
