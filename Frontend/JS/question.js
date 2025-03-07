@@ -8,11 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
             question: "Quelle est la principale conséquence de la surpêche ?",
             answers: [
                 { text: "La diminution des populations de poissons", correct: true },
-                { text: "Augmentation des poissons", correct: false }
+                { text: "Une augmentation du nombre de poissons dans l’océan", correct: false }
             ]
         },
         {
-            question: "Quel pourcentage des stocks de poissons sont surexploités ?",
+            question: "Quel pourcentage des poissons pêchés dans le monde provient de stocks surexploités ?",
             answers: [
                 { text: "10%", correct: false },
                 { text: "30%", correct: true },
@@ -20,11 +20,11 @@ document.addEventListener("DOMContentLoaded", function () {
             ]
         },
         {
-            question: "Quelle est une solution pour réduire la surpêche ?",
+            question: "Quelle action permettrait de limiter la surpêche ?",
             answers: [
                 { text: "Augmenter les quotas de pêche", correct: false },
                 { text: "Protéger les zones marines vulnérables", correct: true },
-                { text: "Ignorer le problème", correct: false }
+                { text: "INe rien changer aux pratiques actuelles", correct: false }
             ]
         },
         {

@@ -27,3 +27,21 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+// Fonction pour créer des émojis animés
+function createFloatingIcons() {
+    const floatingContainer = document.getElementById("floating-icons");
+    for (let i = 0; i < 20; i++) { // Nombre d'émojis à générer
+        let fish = document.createElement("div");
+        fish.classList.add("fish");
+        fish.innerHTML = "🌊"; // Émoji de poisson
+        fish.style.left = Math.random() * 100 + "vw"; // Position horizontale aléatoire
+        fish.style.animationDuration = (5 + Math.random() * 5) + "s"; // Durée d'animation aléatoire
+        floatingContainer.appendChild(fish);
+    }
+}
+
+// Appeler la fonction au chargement de la page
+document.addEventListener("DOMContentLoaded", function () {
+    createFloatingIcons();
+});
