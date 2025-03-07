@@ -10,7 +10,7 @@ func main() {
 	port := ":8080" // Remplace par le port souhaité
 	fmt.Println("Serveur démarré sur le port", port)
 	http.HandleFunc("/", IndexHandler)
-	http.HandleFunc("/document", IndexDocument)
+	http.HandleFunc("/documentation", IndexDocument)
 	http.HandleFunc("/question", IndexQuestion)
 	http.HandleFunc("/problematique", Indexproblematique)
 
