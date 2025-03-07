@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surconsommation de la Pêche</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <script defer src="/js/index.js"></script>
+</head>
+<body>
+    <header>
+        <h1>La Surconsommation de la Pêche</h1>
+    </header>
+    <main>
+        <section id="intro">
+            <p>Chaque année, des milliards de poissons sont capturés, menaçant l'équilibre de nos océans.</p>
+            <button id="learnMore">En savoir plus</button>
+        </section>
+        <section id="quiz">
+            <h2>Testez vos connaissances !</h2>
+            <div id="question-container"></div>
+        </section>
+        <section id="video">
+            <h2>Regardez cette vidéo explicative</h2>
+            <video controls>
+                <source src="/videos/ocean.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la lecture de vidéos.
+            </video>
+        </section>
+        <section id="stats">
+            <h2>Impact sur la biodiversité</h2>
+            <canvas id="fishingChart"></canvas>
+        </section>
+    </main>
+    <div id="floating-icons"></div>
+</body>
+</html>

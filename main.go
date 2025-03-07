@@ -3,15 +3,30 @@ package main
 import (
 	"fmt"
 	"net/http"
-	"teddysbot-surconsommagepeche/Backend/Handler"
+	"text/template"
 )
 
 func main() {
 	port := ":8080" // Remplace par le port souhaité
 	fmt.Println("Serveur démarré sur le port", port)
-	http.HandleFunc("/", Handler.HomeHandler)
+	http.HandleFunc("/", IndexHandler)
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("Frontend"))))
+	http.Handle("/js/", http.StripPrefix("/js/", http.FileServer(http.Dir("Frontend/JS"))))
+	http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("Frontend/CSS"))))
+	http.Handle("/images/", http.StripPrefix("/images/", http.FileServer(http.Dir("Frontend/Images"))))
+	http.Handle("/videos/", http.StripPrefix("/videos/", http.FileServer(http.Dir("Frontend/Videos"))))
 	err := http.ListenAndServe(port, nil)
 	if err != nil {
 		fmt.Println("Erreur lors du démarrage du serveur:", err)
 	}
+}
+
+func IndexHandler(w http.ResponseWriter, r *http.Request) {
+	tmpl, err := template.ParseFiles("Frontend/HTML/index.html")
+	if err != nil {
+		http.Error(w, "Erreur lors du rendu de la page", http.StatusInternalServerError)
+		return
+	}
+	tmpl.Execute(w, nil)
+
 }
